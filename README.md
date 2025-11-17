@@ -1,12 +1,12 @@
 # Proptical Unity Package
-**[PROJECT-TAGLINE]**
+**Practical effects, optically tracked – for free.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Unity Package](https://img.shields.io/badge/Unity-2022.3%2B-blue)](https://unity.com)
 
-> [PROJECT-DESCRIPTION]
+> The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
 
-Proptical Unity Package provides [FEATURE-DESCRIPTION] for Unity projects.
+Proptical Unity Package provides VRPN-based motion capture integration for Unity projects.
 
 **Cross-Platform Support:** This package is part of a cross-platform SDK. See also: [Unreal Engine Plugin](../Proptical_Unreal/Plugins/Proptical/README.md)
 
@@ -14,9 +14,11 @@ Proptical Unity Package provides [FEATURE-DESCRIPTION] for Unity projects.
 
 ## 📋 Overview
 
-Proptical Unity Package provides [FEATURE-DESCRIPTION] for Unity projects.
+Proptical Unity Package provides VRPN-based motion capture integration for Unity projects.
 
-[PROJECT-DESCRIPTION]
+The open-source motion capture system that turns any prop, hand, or body into a perfectly tracked practical effect using $12 ESP32-CAMs, Wi-Fi, UWB anchors, and your choice of state-of-the-art 3D pose models.
+
+Proptical is the **Blender of mocap** – a single local server that speaks VRPN, OSC, and UDP, works with Unity and Unreal out of the box, and lets artists choose between fiducial markers, markerless bodies, or semantic single-point tracking with a single config toggle.
 
 ---
 
@@ -50,9 +52,15 @@ Proptical Unity Package provides [FEATURE-DESCRIPTION] for Unity projects.
 
 ## ✨ Features
 
-* **[Feature 1]** - [Description of feature 1]
-* **[Feature 2]** - [Description of feature 2]
-* **[Feature 3]** - [Description of feature 3]
+* **VRPN Server Integration** - Drop-in Vicon/OptiTrack replacement using official VRPN library with named rigid bodies and skeletons
+* **Native C# Wrappers** - Unity-optimized C# wrappers for the Proptical C++ core
+* **Fiducial Tracking** - OpenCV ArUco / ChArUco sub-mm precision tracking
+* **Markerless Body Tracking** - Outside-in multi-person tracking via NIM containers (MMPose, MediaPipe, CLIFF, MvP)
+* **Markerless Single-Point Tracking** - Inside-out 3D transforms via NIM containers (KP3D, OnePose, NOPE, VideoPose3D)
+* **UWB Fusion** - Kalman filter-based 2D world-map fusion with anchor calibration
+* **Auto-Calibration** - One-tap ChArUco board wave calibration
+* **OSC/UDP Support** - Direct OSC and UDP communication alongside VRPN
+* **Unity Demo Scene** - Example scene demonstrating prop tracking with 1:1 cube following
 
 ---
 
@@ -82,9 +90,12 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 
 ## 🚀 Quick Start
 
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
+1. Install the Proptical Server and configure your ESP32-CAMs
+2. Start the Proptical Server with your desired tracking mode
+3. Import the Proptical Unity Package into your project
+4. Add the VRPN Tracker component to your GameObject
+5. Configure the tracker to connect to your Proptical Server
+6. Your GameObject will now follow the tracked prop/body in real-time
 
 ---
 
@@ -99,20 +110,21 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 ## ⚙️ Requirements
 
 - Unity 2022.3 or later
-- [Additional requirements if any]
+- Proptical Server running on local network
+- ESP32-CAM hardware (for tracking)
 
 ---
 
 ## 🗺️ Roadmap
 
 <details>
-<summary><strong>0.0.1 – Pre-Alpha</strong></summary>
+<summary><strong>0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
 
 - 🚧 Create public GitHub repo + MIT license + initial folder structure
 - 🚧 Write and freeze the 0.0.1 README
 - 🚧 Basic package structure and namespace setup
-- 🚧 Core functionality implementation
-- 🚧 Unity demo scene
+- 🚧 VRPN client integration for Unity
+- 🚧 Unity demo scene – cube follows tracked prop 1:1
 - 🚧 CI – GitHub Actions build and test
 - 🚧 Release 0.0.1 – GitHub Release + Unity package
 
@@ -121,7 +133,7 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 <details>
 <summary><strong>0.1.0 – Pre-Alpha</strong></summary>
 
-- 📋 First public release – core features working
+- 📋 First public release – single-prop inside-out + outside-in rigid bodies
 - 📋 Documentation updates
 - 📋 Example scenes
 
@@ -130,16 +142,17 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 <details>
 <summary><strong>0.2.0–0.9.x – Pre-Alpha</strong></summary>
 
-- 📋 Advanced features
+- 📋 Markerless bodies (outside-in)
+- 📋 UWB fusion + auto-calibration
+- 📋 Multi-person support
 - 📋 Performance optimizations
-- 📋 Additional platform support
 
 </details>
 
 <details>
 <summary><strong>1.0.0 – Alpha</strong></summary>
 
-- 📋 Production-ready package
+- 📋 Full multi-person outside-in, stable inside-out point tracking, production-ready package
 - 📋 Full documentation
 - 📋 Comprehensive test coverage
 
@@ -148,7 +161,8 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 <details>
 <summary><strong>1.x.x – Alpha</strong></summary>
 
-- 📋 Additional features
+- 📋 Hand/face tracking
+- 📋 Live retargeting UI
 - 📋 Performance improvements
 - 📋 Community feedback integration
 
@@ -157,7 +171,9 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 <details>
 <summary><strong>2.0.0+ – Future</strong></summary>
 
-- 📋 Major feature additions
+- 📋 SMPL-X meshes
+- 📋 Real-time denoising
+- 📋 Mobile companion app integration
 - 📋 API stability
 - 📋 Long-term support
 
@@ -177,7 +193,7 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 
 ## 📄 License
 
-Copyright (c) 2025 AJ
+Copyright (c) 2025 AJ Campbell
 
 Licensed under the MIT License. See LICENSE for details.
 
@@ -202,9 +218,11 @@ Proptical is open-source under the MIT License. Got ideas for how to make Propti
 <details>
 <summary><strong>What We Welcome</strong></summary>
 
-* [Contribution type 1]
-* [Contribution type 2]
-* [Contribution type 3]
+* New model containers
+* Better ESP32 firmware
+* Unity-specific optimizations
+* Calibration UI improvements
+* Demo scenes (sword fights, virtual production, etc.)
 
 </details>
 
@@ -212,9 +230,8 @@ Proptical is open-source under the MIT License. Got ideas for how to make Propti
 
 ## 👤 Credits
 
-Created by **AJ**.
+Created by **AJ Campbell**.
 
 ---
 
-_Proptical: [PROJECT-TAGLINE]_
-
+_Proptical: because practical effects should stay practical, and tracking should be free._

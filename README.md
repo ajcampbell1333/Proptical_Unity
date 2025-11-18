@@ -120,13 +120,25 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 <details>
 <summary><strong>0.0.1 – Pre-Alpha ("It tracks one thing really, really well")</strong></summary>
 
-- 🚧 Create public GitHub repo + MIT license + initial folder structure
-- 🚧 Write and freeze the 0.0.1 README
-- 🚧 Basic package structure and namespace setup
-- 🚧 VRPN client integration for Unity
-- 🚧 Unity demo scene – cube follows tracked prop 1:1
+- ✅ Create public GitHub repo + MIT license + initial folder structure
+- ✅ Write and freeze the 0.0.1 README
+- ✅ Basic package structure and namespace setup
+- ✅ VRPN client integration for Unity (UDP-focused, minimal protocol structure)
+- ✅ VRPN client integration for Unreal (UDP-focused, minimal protocol structure)
+- ✅ Cross-platform Phase 2 implementation (Unity + Unreal)
+
+</details>
+
+<details>
+<summary><strong>0.0.2 – Pre-Alpha (In Progress)</strong></summary>
+
+- 🚧 VRPN Tracker message parsing (requires protocol specification)
+- 🚧 VRPNTrackedObject (base demo MonoBehaviour for Unity)
+- 🚧 VRPNTransformNode (transform node with primitive visualizers - Cube, Sphere, Cylinder)
+- 🚧 Unity demo scene creation with multiple transform nodes
+- 🚧 Testing and validation of core tracking accuracy
 - 🚧 CI – GitHub Actions build and test
-- 🚧 Release 0.0.1 – GitHub Release + Unity package
+- 🚧 Release 0.0.2 – GitHub Release + Unity package
 
 </details>
 
@@ -178,8 +190,6 @@ git submodule add https://github.com/ajcampbell1333/Proptical_Unity.git Proptica
 - 📋 Long-term support
 
 </details>
-
-**Note:** Use ✅ Implemented icon for completed tasks.
 
 ---
 
